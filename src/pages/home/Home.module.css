@@ -179,7 +179,6 @@
 
 @media screen and (min-width: 700px) {
   .home {
-    padding-top: 100px;
   }
 
   .surface {
@@ -287,15 +286,13 @@
   }
 }
 @media screen and (min-width: 1000px) {
-  .detail_info_cont {
-    margin-top: 0px;
-  }
-  .home {
-    padding-top: 140px;
-  }
   .info {
     width: 255px;
     height: 128px;
+  }
+  .description {
+    font-size: 16px;
+    margin-top: 10px;
   }
   .name_description_source_details {
     display: flex;
@@ -306,6 +303,7 @@
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
+    padding-top: 100px;
   }
   .main_img_cont {
     width: 30%;

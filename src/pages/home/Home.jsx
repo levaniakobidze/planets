@@ -274,7 +274,13 @@ function Home({ planetIndex, color, setColor }) {
               <div className={classes.name_and_description}>
                 <h1 className={classes.name}>{planets[planetIndex].name}</h1>
                 <p className={classes.description}>
-                  {planets[planetIndex].overview.content}
+                  {activeInfo === "OVERVIEW"
+                    ? planets[planetIndex].overview.content
+                    : activeInfo === "STRUCTURE"
+                    ? planets[planetIndex].structure.content
+                    : activeInfo === "SURFACE"
+                    ? planets[planetIndex].geology.content
+                    : ""}
                 </p>
               </div>
               <div className={classes.source}>
