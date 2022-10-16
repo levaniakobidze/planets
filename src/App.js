@@ -11,6 +11,7 @@ function App() {
         planetIndex={planetIndex}
         setPlanetIndex={setPlanetIndex}
         setColor={setColor}
+        color={color}
       />
       <Home
         planetIndex={planetIndex}

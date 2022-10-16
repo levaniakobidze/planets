@@ -3,7 +3,7 @@ import classes from "./Navbar.module.css";
 import data from "../../data/data.json";
 import { AppContext } from "../../context/appContext";
 
-function Navbar({ setPlanetIndex }) {
+function Navbar({ setPlanetIndex, planetIndex, color }) {
   const { showMenu, setShowMenu } = useContext(AppContext);
 
   const showMenuHandler = () => {
@@ -24,7 +24,21 @@ function Navbar({ setPlanetIndex }) {
         }>
         {data.map((planet, index) => {
           return (
-            <li key={index} onClick={() => changePlanetHandler(index)}>
+            <li
+              key={index}
+              onClick={() => changePlanetHandler(index)}
+              style={{
+                borderTop: `4px solid ${
+                  window.innerWidth >= 1000 && planetIndex === index
+                    ? color
+                    : "transparent"
+                } `,
+                color: `${
+                  window.innerWidth >= 700 && planetIndex === index
+                    ? "#fff"
+                    : "#9595a8"
+                }`,
+              }}>
               <div className={classes.list}>
                 <div
                   className={classes.circle}

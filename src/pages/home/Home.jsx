@@ -246,44 +246,79 @@ function Home({ planetIndex, color, setColor }) {
             </li>
           </ul>
         </div>
-        <div className={classes.main_img_cont}>
-          <img
-            className={classes.main_planet_img}
-            src={
-              activeInfo === "OVERVIEW"
-                ? planets[planetIndex].images.planet
-                : activeInfo === "STRUCTURE"
-                ? planets[planetIndex].images.internal
-                : planets[planetIndex].images.planet
-            }
-            alt='mars'
-          />
-          <img
-            className={classes.surface}
-            src={
-              activeInfo === "SURFACE"
-                ? planets[planetIndex].images.geology
-                : ""
-            }
-            alt=''
-          />
-        </div>
-        <div className={classes.name_and_description}>
-          <h1 className={classes.name}>{planets[planetIndex].name}</h1>
-          <p className={classes.description}>
-            {planets[planetIndex].overview.content}
-          </p>
-        </div>
-        <div className={classes.source}>
-          <p className={classes.source_title}>Source :</p>
-          <a
-            className={classes.source_link}
-            target='_blank'
-            rel='noopener'
-            href={planets[planetIndex].overview.source}>
-            Wikipedia
-            <img src={"../../assets/toparrow.svg"} alt='toparrow' />
-          </a>
+        <div className={classes.img_and_description_and_details}>
+          <div className={classes.main_img_cont}>
+            <img
+              className={classes.main_planet_img}
+              src={
+                activeInfo === "OVERVIEW"
+                  ? planets[planetIndex].images.planet
+                  : activeInfo === "STRUCTURE"
+                  ? planets[planetIndex].images.internal
+                  : planets[planetIndex].images.planet
+              }
+              alt='mars'
+            />
+            <img
+              className={classes.surface}
+              src={
+                activeInfo === "SURFACE"
+                  ? planets[planetIndex].images.geology
+                  : ""
+              }
+              alt=''
+            />
+          </div>
+          <div className={classes.name_description_source_details}>
+            <div className={classes.name_description_source}>
+              <div className={classes.name_and_description}>
+                <h1 className={classes.name}>{planets[planetIndex].name}</h1>
+                <p className={classes.description}>
+                  {planets[planetIndex].overview.content}
+                </p>
+              </div>
+              <div className={classes.source}>
+                <p className={classes.source_title}>Source :</p>
+                <a
+                  className={classes.source_link}
+                  target='_blank'
+                  rel='noopener'
+                  href={planets[planetIndex].overview.source}>
+                  Wikipedia
+                  <img src={"../../assets/toparrow.svg"} alt='toparrow' />
+                </a>
+              </div>
+            </div>
+            <ul className={classes.desktop_details_menu}>
+              <li
+                style={{
+                  background: ` ${activeInfo === "OVERVIEW" ? color : ""}`,
+                }}
+                onClick={() => setActiveInfo("OVERVIEW")}>
+                <span>01</span> OVERVIEW
+              </li>
+              {/* //////////////// */}
+              <li
+                style={{
+                  background: ` ${
+                    activeInfo === "STRUCTURE" ? color : "transparent"
+                  }`,
+                }}
+                onClick={() => setActiveInfo("STRUCTURE")}>
+                <span>02</span> INTERNAL STRUCTURE
+              </li>
+              {/* //////////////// */}
+              <li
+                style={{
+                  background: ` ${
+                    activeInfo === "SURFACE" ? color : "transparent"
+                  }`,
+                }}
+                onClick={() => setActiveInfo("SURFACE")}>
+                <span>03</span> SURFACE GEOLOGY
+              </li>
+            </ul>
+          </div>
         </div>
         <div className={classes.detail_info_cont}>
           <div className={classes.info}>
