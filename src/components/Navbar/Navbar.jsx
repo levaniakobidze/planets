@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import classes from "./Navbar.module.css";
 import data from "../../data/data.json";
-import arrow from "../../assets/icon-chevron.svg";
-import burger from "../../assets/icon-hamburger.svg";
 import { AppContext } from "../../context/appContext";
 
-function Navbar() {
+function Navbar({ setPlanetIndex }) {
   const { showMenu, setShowMenu } = useContext(AppContext);
 
   const showMenuHandler = () => {
     setShowMenu(!showMenu);
+  };
+  const changePlanetHandler = (index) => {
+    setPlanetIndex(index);
+    setShowMenu(false);
   };
   return (
     <nav className={classes.navbar}>
@@ -22,7 +24,7 @@ function Navbar() {
         }>
         {data.map((planet, index) => {
           return (
-            <li key={index}>
+            <li key={index} onClick={() => changePlanetHandler(index)}>
               <div className={classes.list}>
                 <div
                   className={classes.circle}
@@ -49,13 +51,17 @@ function Navbar() {
                   }}></div>
                 {planet.name}
               </div>
-              <img className={classes.arrow} src={arrow} alt='arrow' />
+              <img
+                className={classes.arrow}
+                src={"../../assets/icon-chevron.svg"}
+                alt='arrow'
+              />
             </li>
           );
         })}
       </ul>
       <div className={classes.burger_menu} onClick={showMenuHandler}>
-        <img src={burger} alt='burger' />
+        <img src={"../../assets/icon-hamburger.svg"} alt='burger' />
       </div>
     </nav>
   );

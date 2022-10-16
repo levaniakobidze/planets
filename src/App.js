@@ -1,12 +1,23 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import Home from "./pages/home/Home";
 import Navbar from "./components/Navbar/Navbar";
 function App() {
+  const [planetIndex, setPlanetIndex] = useState(0);
+  const [color, setColor] = useState("#419EBB");
   return (
     <div className='App'>
-      <Navbar />
-      <Home />
+      <Navbar
+        planetIndex={planetIndex}
+        setPlanetIndex={setPlanetIndex}
+        setColor={setColor}
+      />
+      <Home
+        planetIndex={planetIndex}
+        setPlanetIndex={setPlanetIndex}
+        color={color}
+        setColor={setColor}
+      />
     </div>
   );
 }

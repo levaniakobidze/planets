@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Home.module.css";
-import mars from "../../assets/planet-mars.svg";
-import marsmobile from "../../assets/marsmobile.svg";
-import toparrow from "../../assets/toparrow.svg";
+import planets from "../../data/data.json";
 
-function Home() {
+function Home({ planetIndex, color, setColor }) {
+  const [activeInfo, setActiveInfo] = useState("OVERVIEW");
+  console.log(planets);
+
+  useEffect(() => {
+    setActiveInfo("OVERVIEW");
+    switch (planetIndex) {
+      case 0:
+        setColor("#419EBB");
+        break;
+      case 1:
+        setColor("#EDA249");
+        break;
+      case 2:
+        setColor("#6D2ED5");
+        break;
+      case 3:
+        setColor("#D14C32");
+        break;
+      case 4:
+        setColor("#D83A34");
+        break;
+      case 5:
+        setColor("#CD5120");
+        break;
+      case 6:
+        setColor("#1EC1A2");
+        break;
+      case 7:
+        setColor("#2D68F0");
+        break;
+      default:
+        break;
+    }
+  }, [planetIndex]);
+
   return (
     <section className={classes.home}>
       <svg xmlns='http://www.w3.org/2000/svg' width='100%' height='140vh'>
@@ -184,47 +217,93 @@ function Home() {
       <div className={classes.content_wrapper}>
         <div className={classes.info_header}>
           <ul>
-            <li>OVERVIEW</li>
-            <li>STRUCTURE</li>
-            <li>SURFACE</li>
+            <li
+              style={{
+                borderBottom: `2px solid ${
+                  activeInfo === "OVERVIEW" ? color : "transparent"
+                }`,
+              }}
+              onClick={() => setActiveInfo("OVERVIEW")}>
+              OVERVIEW
+            </li>
+            <li
+              style={{
+                borderBottom: `2px solid ${
+                  activeInfo === "STRUCTURE" ? color : "transparent"
+                }`,
+              }}
+              onClick={() => setActiveInfo("STRUCTURE")}>
+              STRUCTURE
+            </li>
+            <li
+              style={{
+                borderBottom: `2px solid ${
+                  activeInfo === "SURFACE" ? color : "transparent"
+                }`,
+              }}
+              onClick={() => setActiveInfo("SURFACE")}>
+              SURFACE
+            </li>
           </ul>
         </div>
-        <img className={classes.main_planet_img} src={marsmobile} alt='mars' />
+        <div className={classes.main_img_cont}>
+          <img
+            className={classes.main_planet_img}
+            src={
+              activeInfo === "OVERVIEW"
+                ? planets[planetIndex].images.planet
+                : activeInfo === "STRUCTURE"
+                ? planets[planetIndex].images.internal
+                : planets[planetIndex].images.planet
+            }
+            alt='mars'
+          />
+          <img
+            className={classes.surface}
+            src={
+              activeInfo === "SURFACE"
+                ? planets[planetIndex].images.geology
+                : ""
+            }
+            alt=''
+          />
+        </div>
         <div className={classes.name_and_description}>
-          <h1 className={classes.name}>MARS</h1>
+          <h1 className={classes.name}>{planets[planetIndex].name}</h1>
           <p className={classes.description}>
-            Venus is the second planet from the Sun. It is named after the Roman
-            goddess of love and beauty. As the brightest natural object in
-            Earth's night sky after the Moon, Venus can cast shadows and can be,
-            on rare occasions, visible to the naked eye in broad daylight.
+            {planets[planetIndex].overview.content}
           </p>
         </div>
         <div className={classes.source}>
           <p className={classes.source_title}>Source :</p>
-          <a className={classes.source_link} href='#'>
+          <a
+            className={classes.source_link}
+            target='_blank'
+            rel='noopener'
+            href={planets[planetIndex].overview.source}>
             Wikipedia
-            <img src={toparrow} alt='toparrow' />
+            <img src={"../../assets/toparrow.svg"} alt='toparrow' />
           </a>
         </div>
         <div className={classes.detail_info_cont}>
           <div className={classes.info}>
             <p>ROTATION TIME</p>
-            <span>58.6 days</span>
+            <span>{planets[planetIndex].rotation}</span>
           </div>
           {/* //////// */}
           <div className={classes.info}>
             <p>REVOLUTION TIME</p>
-            <span>58.6 days</span>
+            <span>{planets[planetIndex].revolution}</span>
           </div>
           {/* /////////////// */}
           <div className={classes.info}>
             <p>RADIUS</p>
-            <span>58.6 days</span>
+            <span>{planets[planetIndex].radius}</span>
           </div>
           {/* ///////////////// */}
           <div className={classes.info}>
             <p>AVERAGE TEMP.</p>
-            <span>58.6 days</span>
+            <span>{planets[planetIndex].temperature}</span>
           </div>
         </div>
       </div>

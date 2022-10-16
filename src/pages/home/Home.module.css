@@ -39,9 +39,21 @@
   color: #ffffff;
   padding: 25px 0;
 }
+.main_img_cont {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: ceter;
+}
 .main_planet_img {
   margin: 60px 0;
   width: 30%;
+}
+.surface {
+  position: absolute;
+  width: 15%;
+  top: 55%;
 }
 .name_and_description {
   width: 100%;
@@ -67,7 +79,7 @@
   font-family: "Spartan";
   font-style: normal;
   font-weight: 400;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 22px;
   /* or 200% */
   text-align: center;
