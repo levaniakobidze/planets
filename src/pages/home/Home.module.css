@@ -9,14 +9,17 @@
   justify-content: center;
   align-items: center;
   color: white;
-  top: 12%;
+  top: 0%;
   width: 100%;
   height: auto;
 }
 .info_header {
   width: 100%;
-  padding: 0 15px;
+  padding-top: 80px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-bottom: 1px solid #1f1f34 !important;
+  /* background-color: red; */
 }
 
 .info_header ul {
@@ -38,6 +41,7 @@
   text-transform: uppercase;
   color: #ffffff;
   padding: 25px 0;
+  transition: all 0.3s;
 }
 .main_img_cont {
   position: relative;
