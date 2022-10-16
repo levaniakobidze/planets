@@ -1,0 +1,151 @@
+.home {
+  position: relative;
+}
+
+.content_wrapper {
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  top: 12%;
+  width: 100%;
+  height: auto;
+}
+.info_header {
+  width: 100%;
+  padding: 0 15px;
+  border-bottom: 1px solid #1f1f34 !important;
+}
+
+.info_header ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info_header ul li {
+  list-style: none;
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 10px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 1.92857px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 25px 0;
+}
+.main_planet_img {
+  margin: 60px 0;
+  width: 30%;
+}
+.name_and_description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 15px;
+}
+.name {
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  /* identical to box height */
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.description {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 22px;
+  /* or 200% */
+  text-align: center;
+  color: #ffffff;
+}
+.source {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.source_title {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 25px;
+  /* identical to box height, or 208% */
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin-right: 5px;
+}
+
+.source_link {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  /* identical to box height, or 208% */
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+}
+.source_link img {
+  margin-left: 3px;
+}
+.detail_info_cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  margin-top: 20px;
+}
+.info {
+  width: 100%;
+  height: 48px;
+  mix-blend-mode: normal;
+  border: 1px solid #363636;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 0 15px;
+}
+.info p {
+  font-family: "Spartan";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 16px;
+  /* identical to box height, or 200% */
+  letter-spacing: 0.727273px;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  opacity: 0.5;
+}
+.info span {
+  font-family: "Antonio";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height */
+  text-align: right;
+  letter-spacing: -0.75px;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
