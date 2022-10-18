@@ -51,7 +51,8 @@
   margin-right: 20px;
 }
 
-.nav_menu_list li {
+.nav_menu_list a {
+  text-decoration: none;
   list-style: none;
   font-family: "Spartan";
   font-style: normal;
@@ -100,7 +101,7 @@
   .burger_menu {
     display: none;
   }
-  .nav_menu_list li {
+  .nav_menu_list a {
     margin: 0 10px;
   }
 }
@@ -112,14 +113,14 @@
     justify-content: space-between;
     height: auto;
   }
-  .nav_menu_list li {
+  .nav_menu_list a {
     /* border-top: 4px solid green; */
     cursor: pointer;
     color: #9595a8;
     transition: all 0.3s;
     padding: 30px 0px;
   }
-  .nav_menu_list li:hover {
+  .nav_menu_list a:hover {
     color: #fff;
   }
 }

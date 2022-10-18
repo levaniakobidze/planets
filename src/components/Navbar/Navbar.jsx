@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import classes from "./Navbar.module.css";
 import data from "../../data/data.json";
 import { AppContext } from "../../context/appContext";
+import { Link } from "react-router-dom";
 
 function Navbar({ setPlanetIndex, planetIndex, color }) {
   const { showMenu, setShowMenu } = useContext(AppContext);
@@ -24,7 +25,8 @@ function Navbar({ setPlanetIndex, planetIndex, color }) {
         }>
         {data.map((planet, index) => {
           return (
-            <li
+            <Link
+              to={planet.name}
               key={index}
               onClick={() => changePlanetHandler(index)}
               style={{
@@ -70,7 +72,7 @@ function Navbar({ setPlanetIndex, planetIndex, color }) {
                 src={"../../assets/icon-chevron.svg"}
                 alt='arrow'
               />
-            </li>
+            </Link>
           );
         })}
       </ul>
