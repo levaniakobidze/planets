@@ -30,7 +30,7 @@ function App() {
           }
         />
         <Route
-          path={":planet" || "Mercury"}
+          path={":planet"}
           element={
             <Home
               planetIndex={planetIndex}
